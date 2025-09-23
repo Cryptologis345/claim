@@ -3,10 +3,7 @@ import "./globals.css";
 import { MessageProvider } from "./context/context";
 import TawkChat from "./TawkChat";
 
-export const metadata: Metadata = {
-  title: 'FlareNetwork',
 
-};
 
 export default function RootLayout({
   children,
@@ -15,12 +12,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-      
-      >
-                <MessageProvider>
+      <script
+        src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
+        defer
+      ></script>
+      <body>
+        <MessageProvider>
           {children}
-          <TawkChat/>
+          <TawkChat />
         </MessageProvider>
       </body>
     </html>
